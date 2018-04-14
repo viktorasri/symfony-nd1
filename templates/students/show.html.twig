@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Studentas {{ utm_term  }}{% endblock %}
+{% block body %}
+        <table class="table table-striped">
+
+            <tbody>
+
+                <tr>
+                    <td>Komanda</td>
+                    <td>{{ utm_content }}</td>
+                </tr>
+                <tr>
+                    <td>Mentroius</td>
+                    <td>{{ utm_campaign }}</td>
+                </tr>
+                <tr>
+                    <td>Studentas</td>
+                    <td>{{ utm_term }}</td>
+                </tr>
+                <tr>
+                    {% if utm_term|lower is same as('viktoras') %}
+                    <td class="table-success mt-3">Aš laimėjau 10 balų</td>
+                    <td class="table-success mt-3"></td>
+                    {% else %}
+                    <td class="table-warning mt-3">Bandyk laimę vėliau</td>
+                    <td class="table-warning mt-3"></td>
+                    {% endif %}
+                </tr>
+
+            </tbody>
+        </table>
+
+    <hr>
+    <a href="/students">Go Back</a>
+
+
+{% endblock %}
