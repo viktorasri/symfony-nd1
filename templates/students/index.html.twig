@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 
-{% block title %}NFQ Akademija  - Studentai }}{% endblock %}
+{% block title %}NFQ Akademija  - Studentai{% endblock %}
 {% block body %}
     {% if students %}
         <table class="table table-striped">
@@ -12,9 +12,9 @@
             </thead>
             <tbody>
             {% for key, student in students %}
-                {% for member in student['members'] %}
+                {% for member in student.members %}
                     <tr>
-                        <td><a href="/student?utm_source=akademija&utm_campaign={{ student['mentor'] }}&utm_term={{ member }}&utm_content={{ key }}">{{ member }}</a></td>
+                        <td><a href="/student?utm_source=akademija&utm_campaign={{ student.mentor }}&utm_term={{ member }}&utm_content={{ key }}">{{ member }}</a></td>
                     </tr>
                 {% endfor %}
             {% endfor %}
