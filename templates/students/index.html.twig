@@ -14,7 +14,7 @@
             {% for key, student in students %}
                 {% for member in student.members %}
                     <tr>
-                        <td><a href="/student?utm_source=akademija&utm_campaign={{ student.mentor }}&utm_term={{ member }}&utm_content={{ key }}">{{ member }}</a></td>
+                        <td><a href="/student?utm_source=akademija&utm_campaign={{ student.mentor|url_encode }}&utm_term={{ member|url_encode }}&utm_content={{ key|url_encode }}">{{ member }}</a></td>
                     </tr>
                 {% endfor %}
             {% endfor %}
